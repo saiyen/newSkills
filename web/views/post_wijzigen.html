@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.post("demo_test_post.asp",
+        {
+          id: "1",
+          title: "Mijn eerste persoonlijke blog",
+          datum: "24-01-2016"
+        },
+        function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+});
+</script>
+</head>
+<body>
+	<form>
+	  Voornaam:<br>
+	  <input type="text" name="firstname"><br>
+	  Achternaam:<br>
+	  <input type="text" name="lastname">
+	</form>
+	<button>Versturen</button>
+</body>
+</html>
